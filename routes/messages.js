@@ -15,8 +15,8 @@ const messages = [
 ];
 
 /* GET new page. */
-router.get("/new", function (req, res, next) {
-  res.render("index", { title: "Express" });
+router.get("/", function (req, res, next) {
+  res.render("messages", { title: "Mini Messageboard", messages });
 });
 
 module.exports = router;
