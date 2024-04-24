@@ -21,7 +21,18 @@ router.get("/", function (req, res, next) {
 
 /* GET new page. */
 router.get("/new", function (req, res, next) {
-  res.render("messages", { title: "Mini Messageboard", messages });
+  res.render("form", { title: "New Message" });
+});
+
+/* POST new page. */
+router.post("/new", function (req, res, next) {
+  const name = req.body.user;
+  const message = req.body.message;
+  console.log(name, message);
+
+  messages.push({ title: "Mini Messageboard", messages });
+
+  res.redirect("/messages");
 });
 
 module.exports = router;
