@@ -28,9 +28,10 @@ router.get("/new", function (req, res, next) {
 router.post("/new", function (req, res, next) {
   const name = req.body.user;
   const message = req.body.message;
+  const added = new Date();
   console.log(name, message);
 
-  messages.push({ title: "Mini Messageboard", messages });
+  messages.push({ user: name, text: message, added });
 
   res.redirect("/messages");
 });
